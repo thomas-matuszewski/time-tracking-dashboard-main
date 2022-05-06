@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-exercise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-orange-self-care: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--very-dark-blue);
+    color: var(--pale-blue);
+}
+
+.container {
+    display: flex;
+    gap: 1.5rem;
+    width: 70%;
+    margin: 3rem auto;
+}
+
+.container .profil {
+    background: var(--dark-blue);
+    border-radius: 1rem;
+    width: 25%;
+}
+
+.container .profil .about {
+    background: var(--blue);
+    border-radius: 1rem;
+    padding: 2rem 2rem;
+}
+.container .profil .about img {
+    width: 30%;
+    box-shadow: 0 0 0 2px #fff;
+    border-radius: 50%;
+}
+
+.container .profil .about h3 {
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+.container .profil .about h1 strong {
+    font-weight: 300;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.container .profil .list {
+    padding: 2rem;
+}
+
+.container .profil .list ul {
+    list-style: none;
+}
+
+.container .profil .list ul li {
+    padding: 0.5rem 0;
+    font-weight: 300;
+}
+
+.container .profil .list ul li button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--pale-blue);
+    transition: 0.5s;
+}
+
+.container .profil .list ul li button.active {
+    color: #fff;
+}
+
+.container .profil .list ul li button:hover {
+    color: #fff;
+}
+
+.container .tills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.container .tills .till {
+    border-radius: 1rem;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.container .tills .till .hood {
+    height: 80%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position-x: right 10%;
+    background-position-y: top -15%;
+    border-radius: 1rem 1rem 0 0;
+    z-index: 3;
+    position: absolute;
+}
+
+.container .tills .till:nth-child(1) .hood {
+    background-color: var(--light-red-work);
+    background-image: url(/time-tracking-dashboard-main/images/icon-work.svg);
+}
+
+.container .tills .till:nth-child(2) .hood {
+    background-color: var(--soft-blue-play);
+    background-image: url(/time-tracking-dashboard-main/images/icon-play.svg);
+}
+.container .tills .till:nth-child(3) .hood {
+    background-color: var(--light-red-study);
+    background-image: url(/time-tracking-dashboard-main/images/icon-study.svg);
+}
+.container .tills .till:nth-child(4) .hood {
+    background-color: var(--lime-green-exercise);
+    background-image: url(/time-tracking-dashboard-main/images/icon-exercise.svg);
+}
+.container .tills .till:nth-child(5) .hood {
+    background-color: var(--violet-social);
+    background-image: url(/time-tracking-dashboard-main/images/icon-social.svg);
+}
+.container .tills .till:nth-child(6) .hood {
+    background-color: var(--soft-orange-self-care);
+    background-image: url(/time-tracking-dashboard-main/images/icon-self-care.svg);
+}
+
+.container .tills .till .content {
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    background: var(--dark-blue);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: absolute;
+    z-index: 5;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.container .tills .till .content:hover {
+    background: var(--blue);
+}
+
+.container .tills .till .content .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .tills .till .content .info img {
+    height: 5%;
+    align-self: center;
+}
+
+.container .tills .till .content .timeframes h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 400;
+}
+
+.container .tills .till .content .timeframes p,
+span {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .container .profil {
+        width: 100%;
+    }
+    .container .profil .about {
+        display: flex;
+    }
+    .container .profil .about img {
+        width: 20%;
+        height: 20%;
+        box-shadow: 0 0 0 3px #fff;
+    }
+    .container .profil .about .name {
+        margin-left: 2rem;
+    }
+    .container .profil .about .name h3 {
+        font-size: 1.5rem;
+    }
+    .container .profil .about .name h1 strong {
+        font-size: 2rem;
+    }
+    .container .profil .list {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+    .container .profil .list ul {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+    }
+    .container .profil .list ul li button {
+        font-size: 1.5rem;
+    }
+    .container .tills {
+        display: flex;
+        flex-direction: column;
+
+        gap: 2rem;
+    }
+    .container .tills .till {
+        height: 200px;
+    }
+    .container .tills .till .content .info h2 {
+        font-size: 1.5rem;
+    }
+    .container .tills .till .content .timeframes {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 1rem;
+    }
+    .container .tills .till .content .timeframes h1 {
+        margin: 0;
+    }
+    .container .tills .till .content .timeframes p,
+    span {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        margin: 1rem auto;
+        width: 80%;
+    }
+    .container .profil {
+        width: 100%;
+    }
+    .container .profil .about {
+        display: flex;
+        padding: 1.5rem;
+        align-items: center;
+    }
+    .container .profil .about img {
+        width: 20%;
+        height: 20%;
+        box-shadow: 0 0 0 3px #fff;
+    }
+    .container .profil .about .name {
+        margin-left: 1rem;
+    }
+    .container .profil .about .name h3 {
+        font-size: 0.7rem;
+        margin-top: 0;
+    }
+    .container .profil .about .name h1 strong {
+        font-size: 1.2rem;
+    }
+    .container .profil .list {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+    .container .profil .list ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: auto;
+    }
+    .container .profil .list ul li button {
+        font-size: 1.2rem;
+    }
+    .container .tills {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .container .tills .till {
+        height: 200px;
+    }
+    .container .tills .till .content {
+        padding: 1rem;
+    }
+    .container .tills .till .content .info h2 {
+        font-size: 1.2rem;
+    }
+    .container .tills .till .content .timeframes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .container .tills .till .content .timeframes h1 {
+        margin: 0;
+    }
+    .container .tills .till .content .timeframes p,
+    span {
+        font-size: 1rem;
+    }
+}
